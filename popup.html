@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: sans-serif; width: 300px; padding: 10px; background: linear-gradient(to bottom, #df3e3e, #275086);}
+    button {  margin: 5px 0; cursor: pointer; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    .desc { font-size: 0.9em; color: #2c2b2b; }
+
+    .load-btn { width: 70px; height: 70px; background-image: url('icons/loadA.png'); background-size: 80%; background-repeat: no-repeat; background-position: center; border: none; cursor: pointer; background-color: transparent; }
+
+    .check-btn { width: 40px; height: 40px; background-image: url('icons/checkA.png'); background-size: 80%; background-repeat: no-repeat; background-position: center; border: none; background-color: transparent; }
+    
+
+    .top-center { display: flex; justify-content: center; margin-bottom: 10px; }
+    .counter-row { display: flex; align-items: center; justify-content: space-between; }
+    .counter-row p { margin: 0; }
+
+    .mode-wrapper { display: flex; justify-content: flex-end; align-items: center; margin-bottom: 10px; }
+    .mode-btn { width: 28px; height: 28px; border-radius: 50%; border: none; cursor: pointer; background-image: url("./icons/switch.png"); background-size: 80%; background-repeat: no-repeat; background-position: center; background-color: transparent;
+}
+
+    .mode-counter { background: #275086; color: white; font-size: 12px; font-weight: bold; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; margin-left: 4px; }
+    
+    .feed-title { text-align: center; color: white; margin: 0 0 8px 0;
+}
+
+
+body.feed-a {
+  background: linear-gradient(to bottom, #df3e3e, #275086);
+}
+
+body.feed-b {
+  background: linear-gradient(to bottom, #2b7a3d, #1e4f2b);
+}
+
+  
+  </style>
+</head>
+<body>
+  <h2 id="feedTitle" class="feed-title">FERIT News</h2>
+
+  <div class="top-center">
+    <button id="showPosts" class="load-btn"></button>
+    
+  </div>
+<div id="status" style="
+  text-align: center;
+  font-size: 12px;
+  color: white;
+  margin-bottom: 6px;
+  visibility: hidden;
+">
+  Loading posts…
+</div>
+  <div class="mode-wrapper">
+    <button id="toggleMode" class="mode-btn"></button>
+    <span id="otherCount" class="mode-counter">0</span>
+  </div>
+
+  <div class="counter-row">
+    <p><strong>New posts since last check:</strong> <span id="counter">0</span></p>
+    <button id="resetCounter" class="check-btn"></button>
+  </div>
+
+
+  <ul id="posts"></ul>
+  <script src="popup.js"></script>
+</body>
+</html>

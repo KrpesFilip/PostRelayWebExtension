@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "Post Monitor",
+  "version": "1.1",
+  "description": "Monitors latest posts from 2 web pages",
+  "permissions": [
+    "alarms",
+    "storage",
+    "https://www.ferit.unios.hr/studenti/*",
+    "https://studentski-poslovi.hr/poslovi/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_title": "News Monitor",
+    "default_popup": "popup.html",
+    "default_icon": "icons/ferit.png"
+  },
+  "icons": {
+    "128": "icons/ferit.png"
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "postrelay2@local",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
+
+}
